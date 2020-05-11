@@ -1,0 +1,4 @@
+overshoot
+settleTime
+firstCross
+doesItReach

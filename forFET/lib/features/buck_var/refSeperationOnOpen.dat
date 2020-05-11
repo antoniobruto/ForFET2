@@ -1,0 +1,9 @@
+feature refSeperationOnOpen;
+begin
+	var vsep;
+	(v>=7.8) ##[0:$] @+(state == open) && (v>=7.8)
+		##[0:$]
+			@+(state == open) && (v<=7.75), vsep = v ##[0:$]
+			@+(state == open) && (v<=7.75)
+	|-> refSeperationOnOpen = vsep-6.5;
+end

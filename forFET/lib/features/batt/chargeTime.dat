@@ -1,0 +1,8 @@
+feature chargeTime;
+begin
+	var t1,t2;
+	(state==precharge) && @+(v>=E),time=0, t1=$time 
+		##[0:$]
+			(state==constantVoltage) && @+(v==Vterm),t2=$time
+	|-> chargeTime = t2 -t1;
+end

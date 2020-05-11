@@ -1,0 +1,20 @@
+#define yylval spaceExlval
+#define yy_create_buffer spaceEx_create_buffer
+#define yy_delete_buffer spaceEx_delete_buffer
+#define yy_flex_debug spaceEx_flex_debug
+#define yy_init_buffer spaceEx_init_buffer
+#define yy_flush_buffer spaceEx_flush_buffer
+#define yy_load_buffer_state spaceEx_load_buffer_state
+#define yy_switch_to_buffer spaceEx_switch_to_buffer
+#define yyin spaceExin
+#define yyleng spaceExleng
+#define yylex spaceExlex
+#define yylineno spaceExlineno
+#define yyout spaceExout
+#define yyrestart spaceExrestart
+#define yytext spaceExtext
+#define yywrap spaceExwrap
+#define yyalloc spaceExalloc
+#define yyrealloc spaceExrealloc
+#define yyfree spaceExfree
+

@@ -1,0 +1,6 @@
+feature safeTemp;
+begin
+	var temp;
+	(state==rod1) || (state==rod2) ,temp=x
+	|-> safeTemp = temp;
+end

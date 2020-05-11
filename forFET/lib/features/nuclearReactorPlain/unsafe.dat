@@ -1,0 +1,6 @@
+feature unsafe;
+begin
+	var temp;
+	(state==meltdown) ,temp=x
+	|-> unsafe = temp;
+end

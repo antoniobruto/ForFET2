@@ -1,0 +1,20 @@
+#define yylval drhlval
+#define yy_create_buffer drh_create_buffer
+#define yy_delete_buffer drh_delete_buffer
+#define yy_flex_debug drh_flex_debug
+#define yy_init_buffer drh_init_buffer
+#define yy_flush_buffer drh_flush_buffer
+#define yy_load_buffer_state drh_load_buffer_state
+#define yy_switch_to_buffer drh_switch_to_buffer
+#define yyin drhin
+#define yyleng drhleng
+#define yylex drhlex
+#define yylineno drhlineno
+#define yyout drhout
+#define yyrestart drhrestart
+#define yytext drhtext
+#define yywrap drhwrap
+#define yyalloc drhalloc
+#define yyrealloc drhrealloc
+#define yyfree drhfree
+

@@ -1,0 +1,6 @@
+feature unsafe;
+begin
+	var temp;
+	(c1<=20 && c2<=20 && x>=550) ,temp=x ##[0:$] (c2<=20 && x>=590 && state==noRods)
+	|-> unsafe = temp;
+end

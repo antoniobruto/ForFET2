@@ -1,0 +1,20 @@
+#define yylval haslaclval
+#define yy_create_buffer haslac_create_buffer
+#define yy_delete_buffer haslac_delete_buffer
+#define yy_flex_debug haslac_flex_debug
+#define yy_init_buffer haslac_init_buffer
+#define yy_flush_buffer haslac_flush_buffer
+#define yy_load_buffer_state haslac_load_buffer_state
+#define yy_switch_to_buffer haslac_switch_to_buffer
+#define yyin haslacin
+#define yyleng haslacleng
+#define yylex haslaclex
+#define yylineno haslaclineno
+#define yyout haslacout
+#define yyrestart haslacrestart
+#define yytext haslactext
+#define yywrap haslacwrap
+#define yyalloc haslacalloc
+#define yyrealloc haslacrealloc
+#define yyfree haslacfree
+

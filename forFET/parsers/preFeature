@@ -1,0 +1,20 @@
+#define yylval featurelval
+#define yy_create_buffer feature_create_buffer
+#define yy_delete_buffer feature_delete_buffer
+#define yy_flex_debug feature_flex_debug
+#define yy_init_buffer feature_init_buffer
+#define yy_flush_buffer feature_flush_buffer
+#define yy_load_buffer_state feature_load_buffer_state
+#define yy_switch_to_buffer feature_switch_to_buffer
+#define yyin featurein
+#define yyleng featureleng
+#define yylex featurelex
+#define yylineno featurelineno
+#define yyout featureout
+#define yyrestart featurerestart
+#define yytext featuretext
+#define yywrap featurewrap
+#define yyalloc featurealloc
+#define yyrealloc featurerealloc
+#define yyfree featurefree
+

@@ -1,0 +1,20 @@
+#define yylval configlval
+#define yy_create_buffer config_create_buffer
+#define yy_delete_buffer config_delete_buffer
+#define yy_flex_debug config_flex_debug
+#define yy_init_buffer config_init_buffer
+#define yy_flush_buffer config_flush_buffer
+#define yy_load_buffer_state config_load_buffer_state
+#define yy_switch_to_buffer config_switch_to_buffer
+#define yyin configin
+#define yyleng configleng
+#define yylex configlex
+#define yylineno configlineno
+#define yyout configout
+#define yyrestart configrestart
+#define yytext configtext
+#define yywrap configwrap
+#define yyalloc configalloc
+#define yyrealloc configrealloc
+#define yyfree configfree
+

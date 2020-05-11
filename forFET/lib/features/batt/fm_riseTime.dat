@@ -1,0 +1,8 @@
+feature fm_riseTime(T1,T2);
+begin
+	var t1,t2;
+	(state==precharge) && first_match(@+(v>=T1*Vterm)), time=0, t1=$time 
+		##[0:$]
+			first_match ( (state==constantCurrent) ) && @+(v>=T2*Vterm) ,t2=$time
+	|-> fm_riseTime = t2 -t1;
+end

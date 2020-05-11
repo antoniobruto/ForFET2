@@ -1,0 +1,8 @@
+feature settleTime;
+begin
+	var st;
+	(v>=6.5+0.05) ##[10:20] @+(state == open) && (v<=6.5+0.05), st = $time
+		##[0:$]
+			@+(state == open) && (v<=6.5+0.05)
+	|-> settleTime = st;
+end

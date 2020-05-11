@@ -1,0 +1,6 @@
+feature overshoot;
+begin
+	var v1;
+	(state==closed && v>=6.2),v1=v
+		|-> overshoot = v1;
+end

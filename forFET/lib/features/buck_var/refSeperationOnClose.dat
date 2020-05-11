@@ -1,0 +1,9 @@
+feature refSeperationOnClose;
+begin
+	var vsep;
+	(v>=7.8) ##[0:$] @+(state == closed) && (v>=5.5)
+		##[0:$]
+			@+(state == closed) && (v>=5.5), vsep = v ##[0:$]
+			@+(state == closed) && (v>=5.5)
+	|-> refSeperationOnClose = vsep-6.5;
+end

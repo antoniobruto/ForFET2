@@ -1,0 +1,8 @@
+feature speedCaptureRange;
+begin
+	var t1,t2;
+	(v>=20 && v<=40), t1=$time 
+		##[0:$]
+			(state==cruise) && @+(v==0),t2=$time
+	|-> speedCaptureRange = t2 -t1;
+end

@@ -1,0 +1,6 @@
+feature settleVoltage;
+begin
+	var st;
+	($time>=0.00045),st=v
+	|-> settleVoltage = st;
+end

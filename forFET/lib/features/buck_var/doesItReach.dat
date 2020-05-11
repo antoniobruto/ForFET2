@@ -1,0 +1,6 @@
+feature doesItReach;
+begin
+	var st;
+	@+(state == open) && (v>=6.5), st = $time
+	|-> doesItReach = st;
+end

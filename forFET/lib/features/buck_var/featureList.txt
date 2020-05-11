@@ -1,0 +1,7 @@
+overshoot
+settleTime
+firstCross
+doesItReach
+settleVoltage
+refSeperationOnOpen
+refSeperationOnClose

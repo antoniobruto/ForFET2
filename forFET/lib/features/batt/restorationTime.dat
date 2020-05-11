@@ -1,0 +1,8 @@
+feature restorationTime;
+begin
+	var t1,t2;
+	(state==maintenance) && @+(v<=Vrestart),time=0, t1=$time 
+		##[0:$]
+			(state==constantVoltage) && @+(i==IEOC),t2=$time
+	|-> restorationTime = t2 -t1;
+end

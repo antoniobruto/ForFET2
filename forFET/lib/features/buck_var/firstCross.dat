@@ -1,0 +1,6 @@
+feature firstCross;
+begin
+	var st;
+	@+(state == open) && (v>=6.5) ##[0:$] @+(state == open) && (v>=6.5) , st = $time
+	|-> firstCross = st;
+end
