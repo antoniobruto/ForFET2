@@ -3809,6 +3809,11 @@ void readFeatureList(struct identifier** list,char* modelName, char* libPath){
 		sprintf(fileName,"%s/features/%s/featureList.txt",libPath,modelName);
 		FILE *featureList = fopen(fileName,"r");
 		
+		if(!featureList){
+			printf("\nWe couldn't find the feature folder for model "%s". Make sure the feature spec is present at this location.\n",modelName);
+			exit(0);
+		}
+		
 		char feature[MAX_STR_LENGTH];
 		while(fscanf(featureList,"%s",feature)!=EOF){
 			*list = addToIdentifierList(*list,feature);
