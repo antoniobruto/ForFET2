@@ -3810,7 +3810,7 @@ void readFeatureList(struct identifier** list,char* modelName, char* libPath){
 		FILE *featureList = fopen(fileName,"r");
 		
 		if(!featureList){
-			printf("\nWe couldn't find the feature folder for model "%s". Make sure the feature spec is present at this location.\n",modelName);
+			printf("\nWe couldn't find the feature folder for model \"%s\". Make sure the feature spec is present at this location.\n",modelName);
 			exit(0);
 		}
 		
