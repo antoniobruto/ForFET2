@@ -1,10 +1,10 @@
 Translators from SpaceEx to HASLAC
 ===
 
-We provide two translators that convert models written in [SpaceEx] (http://spaceex.imag.fr/sites/default/files/spaceex_modeling_language_0.pdf) XML format to [HASLAC](http://cse.iitkgp.ac.in/~bdcaa/ForFET/ref.pdf) language format. The first translator is written in **Matlab** and the second in **Octave**. 
+We provide two translators that convert models written in [SpaceEx](http://spaceex.imag.fr/sites/default/files/spaceex_modeling_language_0.pdf) XML format to [HASLAC](http://cse.iitkgp.ac.in/~bdcaa/ForFET/ref.pdf) language format. The first translator is written in **Matlab** and the second in **Octave**. 
 
 
-####Contents
+#### Contents
 
 In this folder, there exist four subfolders which contain:
 
