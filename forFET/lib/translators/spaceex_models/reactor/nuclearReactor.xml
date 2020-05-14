@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+	<component id="nuclearReactor_template">
+		<param name="x" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="c1" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="c2" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="minTemp" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="maxTemp" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="R0" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="R1" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="R2" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="hop" type="label" local="false" />
+		<location id="1" name="noRods">
+			<invariant>x&gt;=minTemp &amp; x&lt;=maxTemp</invariant>
+			<flow>x'==0.1 * x - R0 &amp; c1'==1 &amp; c2'==1</flow>
+		</location>
+		<location id="2" name="rod1">
+			<invariant>x&gt;=540 &amp; x&lt;=maxTemp</invariant>
+			<flow>x'==0.1 * x - R1 &amp; c1'==1 &amp; c2'==1</flow>
+		</location>
+		<location id="3" name="rod2">
+			<invariant>x&gt;=540 &amp; x&lt;=maxTemp</invariant>
+			<flow>x'==0.1 * x - R2 &amp; c1'==1 &amp; c2'==1</flow>
+		</location>
+		<location id="4" name="meltdown">
+			<invariant>c2&lt;=20 &amp; c1&lt;=20 &amp; x&gt;=minTemp &amp; x&lt;=maxTemp</invariant>
+			<flow>x'==0 &amp; c1'==0 &amp; c2'==0</flow>
+		</location>
+		<transition source="1" target="2">
+			<label>hop</label>
+			<guard>c1&gt;=20 &amp; x==550</guard>
+			<assignment>x'==x &amp; c1'==c1 &amp; c2'==c2</assignment>
+		</transition>
+		<transition source="1" target="3">
+			<label>hop</label>
+			<guard>c2&gt;=20 &amp; x==590</guard>
+			<assignment>x'==x &amp; c1'==c1 &amp; c2'==c2</assignment>
+		</transition>
+		<transition source="1" target="4">
+			<label>hop</label>
+			<guard>x&gt;( R1 - 1 ) * 10 &amp; c2&lt;20 &amp; c1&lt;20</guard>
+			<assignment>x'==x &amp; c1'==c1 &amp; c2'==c2</assignment>
+		</transition>
+		<transition source="1" target="4">
+			<label>hop</label>
+			<guard>x&gt;( R2 - 1 ) * 10 &amp; c2&lt;20</guard>
+			<assignment>x'==x &amp; c1'==c1 &amp; c2'==c2</assignment>
+		</transition>
+		<transition source="2" target="1">
+			<label>hop</label>
+			<guard>x==540</guard>
+			<assignment>x'==x &amp; c1'==0 &amp; c2'==c2</assignment>
+		</transition>
+		<transition source="3" target="1">
+			<label>hop</label>
+			<guard>x==540</guard>
+			<assignment>x'==x &amp; c1'==c1 &amp; c2'==0</assignment>
+		</transition>
+	</component>
+	<component id="nuclearReactor">
+		<param name="x" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="c1" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="c2" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="hop" type="label" local="false"/>
+		<bind component="nuclearReactor_template" as="nuclearReactor_bind">
+			<map key="minTemp">500</map>
+			<map key="maxTemp">600</map>
+			<map key="R0">50</map>
+			<map key="R1">56</map>
+			<map key="R2">60</map>
+			<map key="x">x</map>
+			<map key="c1">c1</map>
+			<map key="c2">c2</map>
+			<map key="hop">hop</map>
+		</bind>
+	</component>
+</sspaceex>

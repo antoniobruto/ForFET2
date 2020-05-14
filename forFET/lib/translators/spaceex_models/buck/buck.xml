@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+	<component id="buck_template">
+		<param name="v" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="i" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="t" type="real" dynamics="any" local="false" d1="1" d2="1" />
+		<param name="a00o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a01o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a10o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a11o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a00c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a01c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a10c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="a11c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="bounds" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="T" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="b0o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="b1o" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="b0c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="b1c" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="Vs" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="D" type="real" dynamics="const" local="false" d1="1" d2="1" />
+		<param name="hop" type="label" local="false" />
+		<location id="1" name="closed">
+			<invariant>t&gt;=0 &amp; t&lt;=D * T &amp; i&gt;=-bounds &amp; i&lt;=bounds &amp; v&gt;=-bounds &amp; v&lt;=bounds</invariant>
+			<flow>t'==1 &amp; v'==( a10c * i + a11c * v + b1c * Vs ) &amp; i'==( a00c * i + a01c * v + b0c * Vs )</flow>
+		</location>
+		<location id="2" name="open">
+			<invariant>t&gt;=0 &amp; t&lt;=( 1 - D ) * T &amp; i&gt;=-bounds &amp; i&lt;=bounds &amp; v&gt;=-bounds &amp; v&lt;=bounds</invariant>
+			<flow>t'==1 &amp; v'==( a10o * i + a11o * v + b1o * Vs ) &amp; i'==( a00o * i + a01o * v + b0o * Vs )</flow>
+		</location>
+		<transition source="1" target="2">
+			<label>hop</label>
+			<guard>t&gt;=D * T</guard>
+			<assignment>i'==i &amp; t'==0 &amp; v'==v</assignment>
+		</transition>
+		<transition source="2" target="1">
+			<label>hop</label>
+			<guard>t&gt;=( 1 - D ) * T</guard>
+			<assignment>i'==i &amp; t'==0 &amp; v'==v</assignment>
+		</transition>
+	</component>
+	<component id="buck">
+		<param name="v" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="i" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="t" type="real" local="false" dynamics="any" controlled="true" d1="1" d2="1" />
+		<param name="hop" type="label" local="false"/>
+		<bind component="buck_template" as="buck_bind">
+			<map key="a00o">0</map>
+			<map key="a01o">-21052.6316</map>
+			<map key="a10o">38095.2381</map>
+			<map key="a11o">-40100.2506</map>
+			<map key="a00c">0</map>
+			<map key="a01c">-21052.6316</map>
+			<map key="a10c">38095.2381</map>
+			<map key="a11c">-40100.2506</map>
+			<map key="bounds">1000</map>
+			<map key="T">1e-05</map>
+			<map key="b0o">0</map>
+			<map key="b1o">0</map>
+			<map key="b0c">21052.6316</map>
+			<map key="b1c">0</map>
+			<map key="Vs">12</map>
+			<map key="D">0.51667</map>
+			<map key="v">v</map>
+			<map key="i">i</map>
+			<map key="t">t</map>
+			<map key="hop">hop</map>
+		</bind>
+	</component>
+</sspaceex>

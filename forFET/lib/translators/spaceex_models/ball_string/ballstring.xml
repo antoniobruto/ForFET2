@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="aut1">
+    <param name="x" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <param name="v" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <param name="L" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="x_r" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="c" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="k" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="d" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="m" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="g" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="down" type="label" local="true" />
+    <param name="up" type="label" local="true" />
+    <param name="bounce" type="label" local="true" />
+    <location id="1" name="freefall" x="291.0" y="196.0" width="136.0" height="90.0">
+      <invariant>x_r &lt;= x &lt;= x_r+L</invariant>
+      <flow>x'==v &amp;
+v'==-g &amp; 
+t'==1</flow>
+    </location>
+    <location id="2" name="extension" x="575.0" y="198.0" width="206.0" height="96.0">
+      <invariant>x &lt;= x_r</invariant>
+      <flow>x'==v &amp;
+v'==-k/m*x-d/m*v-g+k/m*x_r 
+t'==1</flow>
+    </location>
+    <transition source="1" target="2" bezier="true">
+      <label>down</label>
+      <guard>v&lt;0</guard>
+      <labelposition x="-20.0" y="-19.0" />
+      <middlepoint x="420.0" y="169.0" />
+    </transition>
+    <transition source="2" target="1" bezier="true">
+      <label>up</label>
+      <guard>v&gt;0</guard>
+      <labelposition x="-17.0" y="-18.0" />
+      <middlepoint x="415.0" y="226.0" />
+    </transition>
+    <transition source="1" target="1">
+      <label>bounce</label>
+      <guard>x == x_r+L &amp; v &gt; 0</guard>
+      <assignment>v'==-c*v</assignment>
+      <labelposition x="-80.0" y="10.0" width="170.0" height="66.0" />
+      <middlepoint x="-1.0" y="74.0" />
+    </transition>
+  </component>
+  <component id="sys1">
+    <param name="x" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="279.0" y="100.0" />
+    <param name="v" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="278.0" y="131.0" />
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="277.0" y="159.0" />
+    <bind component="aut1" as="ballstring" x="204.0" y="115.0">
+      <map key="x">x</map>
+      <map key="v">v</map>
+      <map key="L">1</map>
+      <map key="x_r">0</map>
+      <map key="c">0.8</map>
+      <map key="k">100</map>
+      <map key="d">4</map>
+      <map key="m">1</map>
+      <map key="g">10</map>
+      <map key="t">t</map>
+    </bind>
+  </component>
+</sspaceex>
