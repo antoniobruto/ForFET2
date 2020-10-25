@@ -1,0 +1,15 @@
+add_subdirectory(api)
+add_subdirectory(cnfizers)
+add_subdirectory(common)
+add_subdirectory(egraph)
+add_subdirectory(parsers/smt2)
+add_subdirectory(parsers/dr)
+add_subdirectory(parsers/drh)
+add_subdirectory(simplifiers)
+add_subdirectory(smtsolvers)
+add_subdirectory(heuristics)
+add_subdirectory(sorts)
+add_subdirectory(tsolvers)
+
+SET(DREAL_SRCS "${DREAL_SRCS}" "${CMAKE_CURRENT_LIST_DIR}/global.cpp"
+  PARENT_SCOPE)

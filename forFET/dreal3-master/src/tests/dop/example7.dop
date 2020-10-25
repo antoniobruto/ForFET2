@@ -1,0 +1,6 @@
+var:
+    [3,4] x;
+    [4,5] y;
+
+cost:
+    x * y + log (x + y) * exp (x + y / x);

@@ -1,0 +1,11 @@
+build*/
+bin/
+doc/html
+.projectile
+.gitignores
+.coveralls.yml
+GPATH
+GRTAGS
+GTAGS
+.DS_Store
+doxygen_out/

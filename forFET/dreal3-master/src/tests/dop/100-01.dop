@@ -1,0 +1,9 @@
+# −3.306868647
+# https://oeis.org/A117234
+
+var:
+    [0,1] x;
+    [0,1] y;
+
+cost:
+    exp(sin(50.0 * x)) + sin(60.0 * exp(y)) + sin(70.0*sin(x))+sin(sin(80.0*y))-sin(10.0*(x+y)) +1.0/4.0*(x^2 + y^2);

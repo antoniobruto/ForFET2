@@ -1,0 +1,13 @@
+simple-bmc
+==========
+
+Transform Hybrid automata into SMT formula which is solvable by dReal. 
+
+Authors
+==========
+Soonho Kong soonhok@cs.cmu.edu
+Wei Chen weichen1@andrew.cmu.edu
+
+Build
+==========
+make

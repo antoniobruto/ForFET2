@@ -1,0 +1,14 @@
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+setup.data
+setup.log
+_tags
+myocamlbuild.ml
+setup.ml

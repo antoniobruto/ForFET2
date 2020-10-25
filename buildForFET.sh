@@ -4,6 +4,7 @@
 #mkdir forFET/work #> $HOME/forFET_log.txt 2>&1
 #mkdir forFET/models #> $HOME/forFET_log.txt 2>&1
 cd forFET
+chmod 777 build.sh
 ./build.sh
 ret_code=$?
 
