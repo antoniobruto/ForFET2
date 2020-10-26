@@ -48,29 +48,21 @@ There are two main ways of building ForFET-SMT.
 (NOTE: "Run >>" is only an indication of what to type in the terminal)
 			
 1. The first step is to set the file permissions.
-	--------------------------------------------------
-	Run >> sh permissions.sh	
-	--------------------------------------------------	
-		
-2. A single script "quickSetup.sh", has been included that automates 
-dependency installations and the process of building and running ForFET. 
+>	Run >> sh permissions.sh	
+	
+2. The second step is to build ForFET. 
+A single script "quickSetup.sh", has been included that automates 
+dependency installations and the process of building and running ForFET. 	
+>	Run >> ./quickSetup.sh	
 
-	The second step is to build ForFET
-	--------------------------------------------------
-	Run >> ./quickSetup.sh	
-	--------------------------------------------------	
 
 3. To run experiments, first open the web-browser Firefox and then:
 	A. Run all experiments:
-	----------------------------------------------------
-	Run >> ./runExperiments.sh
-	----------------------------------------------------
+>	Run >> ./runExperiments.sh
 	B. Run each experiment separately: Refer to the next section.
 
 4. To restore Python Symlink from Python 2.7 to Python 3 (only if needed)
-	---------------------------------------------------
-	Run >> ./restore-python.sh
-	---------------------------------------------------
+>	Run >> ./restore-python.sh
 		
 **************************************************************************
 
@@ -78,32 +70,22 @@ dependency installations and the process of building and running ForFET.
 (NOTE: "Run >>" is only an indication of what to type in the terminal)
 			
 1. Again, the first step is to set the file permissions.
-	--------------------------------------------------
-	Run >> sh permissions.sh	
-	--------------------------------------------------
+>	Run >> sh permissions.sh	
 					
 2. Install Libraries required by ForFET:
-	---------------------------------------------------
-	Run >> ./install-libs.sh
-	---------------------------------------------------
+>	Run >> ./install-libs.sh
 	
 3. Build ForFET-SMT:
-	---------------------------------------------------
-	Run >> ./buildForFET.sh
-	---------------------------------------------------
+>	Run >> ./buildForFET.sh
 	
 4. To run experiments, first open the web-browser Firefox and then:
 	A. Run all experiments:
-	----------------------------------------------------
-	Run >> ./runExperiments.sh
-	----------------------------------------------------
+>	Run >> ./runExperiments.sh
 	B. Run each experiment separately: Refer to the next section.
 
 5. To restore Python Symlink from Python 2.7 to Python 3 (only if needed)
-	---------------------------------------------------
-	Run >> ./restore-python.sh
-	---------------------------------------------------
-	
+>	Run >> ./restore-python.sh
+
 **************************************************************************
 		
 			    DEMO EXPERIMENTS
@@ -113,19 +95,13 @@ ForFET-SMT from a file, enabling scripts to be written for experiments.
 
 To demonstrate ForFET-SMT, we provide scripts/instructions for the following:
 
--------------------------------------------------------------------------------
-
 1. Demonstrating Extremal Value Analysis -- Timed Property
 
 This experiment performs feature analysis on a battery charger model with 
 first match (urgent) semantics. 
 
 To run this experiment:
-	----------------------------------------------------
-	Run >> ./Experiment_1.sh
-	----------------------------------------------------
-	
--------------------------------------------------------------------------------
+>	Run >> ./Experiment_1.sh
 
 2. Non first match semantics -- State explosion and blowup
 
@@ -136,22 +112,14 @@ This experiment aims to highlight the improvement by adding first match
 semantics and higlihghting the need and usability of ForFET-SMT.
 
 To run this experiment:
-	----------------------------------------------------
-	Run >> ./Experiment_2.sh
-	----------------------------------------------------
-
--------------------------------------------------------------------------------
+>	Run >> ./Experiment_2.sh
 
 3. Extremal Value Analysis -- Safety Property
 
 This experiment performs feature analysis on a nuclear reactor model.
 
 To run this experiment:
-	----------------------------------------------------
-	Run >> ./Experiment_3.sh
-	----------------------------------------------------
-
--------------------------------------------------------------------------------
+>	Run >> ./Experiment_3.sh
 
 4. Visualization problems with Json and dReach
 
@@ -159,16 +127,12 @@ This experiment again uses the nuclear reactor model and shows the
 visualization problem caused by the JSON file generation.
 
 To run this experiment:
-	----------------------------------------------------
-	Run >> ./Experiment_4.sh
-	----------------------------------------------------
+>	Run >> ./Experiment_4.sh
 
 ***************************************************************************
 			RUNNING ALL EXPERIMENTS
-	----------------------------------------------------
 	You can run all the experiments by running
-	Run >> ./runExperiments.sh
-	----------------------------------------------------
+>	Run >> ./runExperiments.sh
 
 ***************************************************************************
 	      PROBLEMS WITH VISUALIZING TRACES IN ForFET-SMT
@@ -185,13 +149,11 @@ that you run the webserver manually. The instructions for doing this are below.
 	keyword 'TRACE-FILE-ID'. 
 	
 	For instance the following may be found in the terminal:
-	------------------------------------------------------------------
+	******************************************************
 	SMT Search Code Executed in ...	
 	LEFT CORNER = 6957.612735 : TRACE-FILE-ID = trace_1 
 	RIGHT CORNER = 7788.793472 : TRACE-FILE-ID = trace_8
-	
-	...
-	------------------------------------------------------------------
+	******************************************************
 	You may then look for trace_1.json and trace_8.json in the directory
 	forFET/work/
 	
@@ -202,28 +164,20 @@ that you run the webserver manually. The instructions for doing this are below.
 	For instance, in the terminal, if the root directory of the tool is named
 	ForFET-SMT, and if your current path is 'ForFET-SMT/forFET/work'
 	then the following command achieves this.
-	------------------------------------------------------------------
-	Run >> cp trace_n.json ../dreal3-master/tools/ODE_visualization/data.json
-	------------------------------------------------------------------	
+>	Run >> cp trace_n.json ../dreal3-master/tools/ODE_visualization/data.json
 	You may replace 'trace_n.json' with the name of the trace of your choice.
 
 3. 	From the forFET/work directory, go to the directory 
 	forFET/dreal3-master/tools/ODE_visualization/
-	------------------------------------------------------------------
-	Run >> cd ../dreal3-master/tools/ODE_visualization/
-	------------------------------------------------------------------
+>	Run >> cd ../dreal3-master/tools/ODE_visualization/
 
 4.	Start the web-server
-	------------------------------------------------------------------
-	Run >> ./run_websvr.sh 
-	------------------------------------------------------------------
+>	Run >> ./run_websvr.sh 
 	If it does not execute, try running 'chmod 777 run_websvr.sh' and 
 	then starting the web-server again.
 	
 5.	In a browser (FireFox), type the following address in the address bar
-	------------------------------------------------------------------
-	http://0.0.0.0:8000/
-	------------------------------------------------------------------
+>	http://0.0.0.0:8000/	
 	
 	You should now see the trace you chose in the browser. 
 	
@@ -233,13 +187,12 @@ that you run the webserver manually. The instructions for doing this are below.
 ***************************************************************************
 
 To run ForFET standalone and use the tool:  
-	---------------------------------------------------
+	***************************************************
 	In the directory "forFET"
-	Run "./forFET default.cfg"
-	----------------------------------------------------
+>	Run "./forFET default.cfg"
+	****************************************************
 	Alternately refer to the next section on experiments
 	to run guided experiments for the tool demonstration.
-	----------------------------------------------------
 	
 ***************************************************************************
 	
