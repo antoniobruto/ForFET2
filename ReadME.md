@@ -48,20 +48,20 @@ There are two main ways of building ForFET-SMT.
 (NOTE: "Run >>" is only an indication of what to type in the terminal)
 			
 1. 	The first step is to set the file permissions.
->	Run >> sh permissions.sh	
+	>	Run >> sh permissions.sh	
 	
 2. The second step is to build ForFET. 
 	A single script "quickSetup.sh", has been included that automates 
 	dependency installations and the process of building and running ForFET. 	
->	Run >> ./quickSetup.sh	
+	>	Run >> ./quickSetup.sh	
 
 3. To run experiments, first open the web-browser Firefox and then:
 	A.	Run all experiments:
-	>	Run >> ./runExperiments.sh
+		>	Run >> ./runExperiments.sh
 	B. 	Run each experiment separately: Refer to the next section.
 
 4. To restore Python Symlink from Python 2.7 to Python 3 (only if needed)
->	Run >> ./restore-python.sh
+	>	Run >> ./restore-python.sh
 		
 **************************************************************************
 
