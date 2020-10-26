@@ -179,20 +179,19 @@ that you run the webserver manually. The instructions for doing this are below.
 5.	In a browser (FireFox), type the following address in the address bar
 >	http://0.0.0.0:8000/	
 	
-	You should now see the trace you chose in the browser. 
-	
-	To quit the server use Ctrl+C while in the terminal where the 
-	web-server is running.
+You should now see the trace you chose in the browser. 
+
+To quit the server use Ctrl+C while in the terminal where the 
+web-server is running.
 	
 ***************************************************************************
 
-To run ForFET standalone and use the tool:  
-	***************************************************
+To run ForFET standalone and use the tool:
 	In the directory "forFET"
 >	Run "./forFET default.cfg"
-	****************************************************
-	Alternately refer to the next section on experiments
-	to run guided experiments for the tool demonstration.
+	
+Alternately refer to the section on experiments
+to run guided experiments for the tool demonstration.
 	
 ***************************************************************************
 	
