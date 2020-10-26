@@ -130,8 +130,8 @@ To demonstrate ForFET-SMT, we provide scripts/instructions for the following:
 ***************************************************************************
 			RUNNING ALL EXPERIMENTS
 			
-You can run all the experiments by running
->	Run >> ./runExperiments.sh
+	To run all experiments:
+	>	Run >> ./runExperiments.sh
 
 ***************************************************************************
 	      PROBLEMS WITH VISUALIZING TRACES IN ForFET-SMT
