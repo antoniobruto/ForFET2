@@ -76,13 +76,16 @@ There are two main ways of building ForFET-SMT.
 	
 3. Build ForFET-SMT:
 	>	Run >> ./buildForFET.sh
+
+4. To set python to python 2.7
+	>	Run >> ./setPythonPath.sh
 	
-4. To run experiments, first open the web-browser Firefox and then:
+5. To run experiments, first open the web-browser Firefox and then:
 	A. Run all experiments:
 	>	Run >> ./runExperiments.sh
 	B. Run each experiment separately: Refer to the next section.
 
-5. To restore Python Symlink from Python 2.7 to Python 3 (only if needed)
+6. To restore Python Symlink from Python 2.7 to Python 3 (only if needed)
 	>	Run >> ./restore-python.sh
 
 **************************************************************************
